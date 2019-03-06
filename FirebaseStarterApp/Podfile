@@ -6,6 +6,9 @@ target 'FirebaseStarterApp' do
   use_frameworks!
 
   # Pods for FirebaseStarterApp
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 
   pod 'Alamofire'
 

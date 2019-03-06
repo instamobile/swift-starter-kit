@@ -6,6 +6,9 @@
 //  Copyright © 2018 Instamobile. All rights reserved.
 //
 
+import FacebookCore
+import FacebookLogin
+import FirebaseAuth
 import UIKit
 
 class ATCClassicLoginScreenViewController: UIViewController {
@@ -30,6 +33,8 @@ class ATCClassicLoginScreenViewController: UIViewController {
 
     private let separatorFont = UIFont.boldSystemFont(ofSize: 14)
     private let separatorTextColor = UIColor(hexString: "#464646")
+
+    private let readPermissions: [ReadPermission] = [ .publicProfile, .email, .userFriends, .custom("user_posts") ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,9 +118,39 @@ class ATCClassicLoginScreenViewController: UIViewController {
     }
 
     @objc func didTapFacebookButton() {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: readPermissions, viewController: self, completion: didReceiveFacebookLoginResult)
     }
 
     func display(alertController: UIAlertController) {
         self.present(alertController, animated: true, completion: nil)
+    }
+
+    private func didReceiveFacebookLoginResult(loginResult: LoginResult) {
+        switch loginResult {
+        case .success:
+            didLoginWithFacebook()
+        case .failed(_): break
+        default: break
+        }
+    }
+
+    fileprivate func didLoginWithFacebook() {
+        // Successful log in with Facebook
+        if let accessToken = AccessToken.current {
+            // If Firebase enabled, we log the user into Firebase
+            FirebaseAuthManager().login(credential: FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)) {[weak self] (success) in
+                guard let `self` = self else { return }
+                var message: String = ""
+                if (success) {
+                    message = "User was sucessfully logged in."
+                } else {
+                    message = "There was an error."
+                }
+                let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.display(alertController: alertController)
+            }
+        }
     }
 }
