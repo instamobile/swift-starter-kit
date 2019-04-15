@@ -21,4 +21,4 @@ Boilerplate Onboarding App in Swift with Firebase Integration, Facebook Login an
 	<li>Push Notifications</li>
 </ul>
 
-Coded with ❤️ by <a href="https://www.iosapptemplates.com">iOS Templates</a>.
+Coded with ❤️ by <a href="https://www.iosapptemplates.com">iOS Templates</a> and <a href="https://www.instamobile.io">Instamobile</a>.
