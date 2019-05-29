@@ -1,4 +1,4 @@
-# Swift Starter Kit 🚀🚀🔥🔥
+# iOS Swift Starter Kit 🚀🚀🔥🔥
 
 Boilerplate Onboarding App in Swift with Firebase Integration, Facebook Login and Push Notifications. Save days of app development by starting your next iOS app with this complete Xcode project.
 
