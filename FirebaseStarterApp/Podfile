@@ -7,12 +7,10 @@ target 'FirebaseStarterApp' do
 
   # Pods for FirebaseStarterApp
 
-  pod 'FacebookCore', '~> 0.5.0'
-  pod 'FacebookLogin', '~> 0.5.0'
-  pod 'FacebookShare', '~> 0.5.0'
-
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
   pod 'Alamofire'
-
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
