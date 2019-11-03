@@ -21,7 +21,7 @@ class ATCClassicLoginScreenViewController: UIViewController {
   @IBOutlet var facebookButton: UIButton!
   @IBOutlet var backButton: UIButton!
   
-  private let backgroundColor: UIColor = .white
+  private let backgroundColor = HelperDarkMode.mainThemeBackgroundColor
   private let tintColor = UIColor(hexString: "#ff5a66")
   
   private let titleFont = UIFont.boldSystemFont(ofSize: 30)
@@ -34,10 +34,9 @@ class ATCClassicLoginScreenViewController: UIViewController {
   private let separatorFont = UIFont.boldSystemFont(ofSize: 14)
   private let separatorTextColor = UIColor(hexString: "#464646")
   
-  //    private let readPermissions: [ReadPermission] = [ .publicProfile, .email, .userFriends, .custom("user_posts") ]
-  
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = backgroundColor
     backButton.setImage(UIImage.localImage("arrow-back-icon", template: true), for: .normal)
     backButton.tintColor = UIColor(hexString: "#282E4F")
     backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)

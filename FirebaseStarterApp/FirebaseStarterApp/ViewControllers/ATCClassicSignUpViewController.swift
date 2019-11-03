@@ -20,7 +20,7 @@ class ATCClassicSignUpViewController: UIViewController {
     @IBOutlet var signUpButton: UIButton!
 
     private let tintColor = UIColor(hexString: "#ff5a66")
-    private let backgroundColor: UIColor = .white
+    private let backgroundColor: UIColor = HelperDarkMode.mainThemeBackgroundColor
     private let textFieldColor = UIColor(hexString: "#B0B3C6")
     
     private let textFieldBorderColor = UIColor(hexString: "#B0B3C6")
@@ -31,6 +31,7 @@ class ATCClassicSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = backgroundColor
         let color = UIColor(hexString: "#282E4F")
         backButton.tintColor = color
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
