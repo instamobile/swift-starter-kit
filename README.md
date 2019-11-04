@@ -19,6 +19,7 @@ Boilerplate Onboarding App in Swift with Firebase Integration, Facebook Login an
 	<li>Facebook Login</li>
 	<li>Persistent login credentials</li>
 	<li>Push Notifications</li>
+	<li>Dark Mode support</li>
 </ul>
 
-Coded with ❤️ by <a href="https://www.iosapptemplates.com">iOS Templates</a> and <a href="https://www.instamobile.io">Instamobile</a>.
+Coded with ❤️️️️️️ by <a href="https://www.iosapptemplates.com">iOS Templates</a> and <a href="https://www.instamobile.io">Instamobile</a>.
